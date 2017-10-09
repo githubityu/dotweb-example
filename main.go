@@ -58,7 +58,8 @@ func IndexReg(ctx dotweb.Context) error {
 }
 
 func KeyPost(ctx dotweb.Context) error {
-	username1 := ctx.Request().PostString("username")
+	//PostFormValue代替PostString方法
+	username1 := ctx.Request().PostFormValue("username")
 	username2 := ctx.FormValue("username")
 	username3 := ctx.PostFormValue("username")
 	ctx.WriteString("username:" + username1 + " - " + username2 + " - " + username3)
